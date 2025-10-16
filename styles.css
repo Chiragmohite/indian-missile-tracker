@@ -1,0 +1,239 @@
+/* Dashboard theme styles.css */
+:root {
+  --bg: #050612;
+  --panel: #081227;
+  --muted: #9aa4b2;
+  --accent: #ff6b6b;
+  --accent2: #ffb86b;
+  --glass: rgba(255, 255, 255, 0.03);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background: linear-gradient(180deg, #02030a, var(--bg));
+  font-family: Inter, Segoe UI, Arial, sans-serif;
+  color: #e6eef6;
+  overflow: hidden; /* prevent scrollbars */
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), transparent);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.search-area {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.search-area input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  color: #fff;
+  width: 300px;
+}
+
+.search-area select {
+  padding: 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  gap: 12px;
+  padding: 12px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 280px;
+  background: var(--panel);
+  border-radius: 8px;
+  padding: 12px;
+  overflow-y: auto;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  flex-shrink: 0;
+}
+
+.sidebar-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--accent2);
+}
+
+.missile-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.missile-item {
+  padding: 10px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.missile-item:hover {
+  background: rgba(255, 255, 255, 0.02);
+  transform: translateX(4px);
+  transition: all 0.12s;
+}
+
+.missile-name {
+  font-weight: 600;
+}
+
+.missile-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.mainview {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.globe-wrap {
+  flex: 1;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.04));
+}
+
+#globeViz {
+  width: 100%;
+  height: 100%;
+}
+
+#globeViz canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  padding: 8px;
+  background: var(--glass);
+  backdrop-filter: blur(3px);
+  border-radius: 6px;
+  color: var(--accent2);
+}
+
+.overlay.top-left {
+  top: 12px;
+  left: 12px;
+}
+
+.infobar {
+  height: 72px;
+  background: var(--panel);
+  border-radius: 6px;
+  padding: 12px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.rightpanel {
+  width: 260px;
+  background: var(--panel);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.panel-title {
+  font-weight: 700;
+  color: var(--accent2);
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.buttons button {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+  color: #fff;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.red {
+  background: #ff6b6b;
+}
+
+.orange {
+  background: #ffb86b;
+}
+
+.footer {
+  padding: 8px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}

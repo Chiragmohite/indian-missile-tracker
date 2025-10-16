@@ -1,0 +1,65 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Indian Missile Tracker — Command Dashboard</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="dashboard">
+    <header class="topbar">
+      <div class="brand">INDIAN MISSILE TRACKER — COMMAND DASHBOARD</div>
+      <div class="search-area">
+        <input id="search" placeholder="Search missile name, type or year..." />
+        <select id="filterClass">
+          <option value="all">All classes</option>
+          <option value="short">Short</option>
+          <option value="medium">Medium</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="submarine">Submarine</option>
+        </select>
+      </div>
+    </header>
+
+    <div class="container">
+      <aside class="sidebar">
+        <div class="sidebar-title">Missiles</div>
+        <div id="missileList" class="missile-list"></div>
+      </aside>
+
+      <main class="mainview">
+        <div id="globeWrap" class="globe-wrap">
+          <div id="globeViz"></div>
+          <div class="overlay top-left">India Focus</div>
+        </div>
+        <div class="infobar" id="selected">Select a missile/test to see details</div>
+      </main>
+
+      <aside class="rightpanel">
+        <div class="panel-title">Controls & Timeline</div>
+        <label>Year: <span id="yearLabel">All</span></label>
+        <input id="yearRange" type="range" min="1990" max="2025" step="1" value="2025" />
+        <div class="buttons">
+          <button id="playBtn">Play ▶</button>
+          <button id="resetBtn">Reset</button>
+        </div>
+        <div class="panel-title">Legend</div>
+        <div class="legend"><span class="dot red"></span> India tests</div>
+        <div class="legend"><span class="dot orange"></span> Neighbor tests</div>
+      </aside>
+    </div>
+
+    <footer class="footer">Educational demo — data approximate. Command Dashboard theme.</footer>
+  </div>
+
+  <!-- CDN libraries -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/globe.gl"></script>
+
+  <script src="classification.js"></script>
+  <script src="data.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

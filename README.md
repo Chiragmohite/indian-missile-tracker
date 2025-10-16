@@ -10,8 +10,7 @@ Files:
 
 Run locally:
 1. Unzip the folder.
-2. Serve with a simple HTTP server (recommended):
-   python -m http.server 8000
+2. Serve with a simple HTTP server
 3. Open (https://chiragmohite.github.io/indian-missile-tracker/)
 
 Notes:

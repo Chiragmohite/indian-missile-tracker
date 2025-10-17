@@ -11,7 +11,7 @@ Files:
 Run locally:
 1. Unzip the folder.
 2. Serve with a simple HTTP server
-3. Open (https://chiragmohite.github.io/indian-missile-tracker/)
+3. Open (https://indianmissiletracker.netlify.app/)
 
 Notes:
 - Data is best-effort and approximate. Edit data.js to add/correct events.
